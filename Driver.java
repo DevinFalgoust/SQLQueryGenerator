@@ -1,0 +1,75 @@
+import insert.FieldType;
+import insert.InsertQueryGenerator;
+
+/**
+ * This is the Driver class, containing the main function
+ * and sample code for how each Query Generator is used.
+ * 
+ * @author Devin Falgoust
+ */
+public class Driver {
+
+	public static void main(String args[]) {
+		demoInsertQueryGenerator();
+	}
+
+	/**
+	 * This function provides sample code for the InsertQueryGenerator
+	 */
+	public static void demoInsertQueryGenerator() {
+		/*
+		 * Create a new InsertQueryGenerator with these parameters:
+		 * tableName = "NGS_DREAM_MSG"
+		 * start = 1
+		 * end = 5
+		 * 
+		 * The tableName is the table that you wish to insert a record into.
+		 * The start and end variables are used to calculate 1) the IDs of each
+		 * record and 2) the number of records to generate.
+		 */
+		InsertQueryGenerator generator = new InsertQueryGenerator("NGS_DREAM_MSG", 1, 5);
+
+		/*
+		 * The addField function takes these parameters:
+		 * 1) the name of the field
+		 * 2) the type of field
+		 * 3...) any options for the field
+		 * 
+		 * The valid types are:
+		 * ID - generates an ID starting at "start" and ending at "end"
+		 * NAME - generates a random string of 8 characters where the first is capitalized
+		 * EMAIL - generates a random email address. This is created using 8 random
+		 *    characters, then the ID, then @test.com
+		 * TEXT - adds a random text of the options given
+		 *    If there are no options, it generates a random string of 8 characters
+		 *    If one option is provided, it adds that text to every record
+		 *    If more than one option is provided, it chooses a random option from these
+		 */
+
+		// First add the ID
+		generator.addField("ID", FieldType.ID);
+
+		// Then add first and last name
+		generator.addField("FIRST_NAME", FieldType.NAME);
+		generator.addField("LAST_NAME", FieldType.NAME);
+
+		// Then add the email
+		generator.addField("EMAIL", FieldType.EMAIL);
+
+		// Then add a boolean variable
+		generator.addField("OPTIN", FieldType.TEXT, "true", "false");
+
+		// Then add a date
+		generator.addField("OPTIN_DATE", FieldType.TEXT, "10032014");
+
+		// Then add a string with two options
+		generator.addField("SOURCE", FieldType.TEXT, "WEB", "STORE");
+
+		// Then add a string with no options (randomly generates)
+		generator.addField("DATA", FieldType.TEXT);
+
+		// Then print the list of queries
+		System.out.println(generator.generate());
+	}
+
+}
