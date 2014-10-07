@@ -19,7 +19,7 @@ public class Driver {
 	public static void demoInsertQueryGenerator() {
 		/*
 		 * Create a new InsertQueryGenerator with these parameters:
-		 * tableName = "NGS_DREAM_MSG"
+		 * tableName = "TEST_TABLE"
 		 * start = 1
 		 * end = 5
 		 * 
@@ -27,7 +27,7 @@ public class Driver {
 		 * The start and end variables are used to calculate 1) the IDs of each
 		 * record and 2) the number of records to generate.
 		 */
-		InsertQueryGenerator generator = new InsertQueryGenerator("NGS_DREAM_MSG", 1, 5);
+		InsertQueryGenerator generator = new InsertQueryGenerator("TEST_TABLE", 1, 5);
 
 		/*
 		 * The addField function takes these parameters:
@@ -57,10 +57,10 @@ public class Driver {
 		generator.addField("EMAIL", FieldType.EMAIL);
 
 		// Then add a boolean variable
-		generator.addField("OPTIN", FieldType.TEXT, "true", "false");
+		generator.addField("BOOLEAN", FieldType.TEXT, "true", "false");
 
 		// Then add a date
-		generator.addField("OPTIN_DATE", FieldType.TEXT, "10032014");
+		generator.addField("DATE", FieldType.TEXT, "10032014");
 
 		// Then add a string with two options
 		generator.addField("SOURCE", FieldType.TEXT, "WEB", "STORE");
