@@ -1,4 +1,4 @@
-package generic;
+package devinfalgoust.sqlquerygenerator;
 
 /**
  * A Generic Query Interface with a generate function. This is here so that every

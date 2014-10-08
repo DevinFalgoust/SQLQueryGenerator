@@ -1,4 +1,4 @@
-package insert;
+package devinfalgoust.sqlquerygenerator.insert;
 
 /**
  * An Enumerated Type signifying the different types of fields

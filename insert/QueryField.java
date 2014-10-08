@@ -1,4 +1,4 @@
-package insert;
+package devinfalgoust.sqlquerygenerator.insert;
 
 import java.util.ArrayList;
 import java.util.List;

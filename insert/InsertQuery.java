@@ -1,9 +1,9 @@
-package insert;
-
-import generic.Query;
+package devinfalgoust.sqlquerygenerator.insert;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import devinfalgoust.sqlquerygenerator.Query;
 
 /**
  * The InsertQuery class is used by the InsertQueryGenerator.

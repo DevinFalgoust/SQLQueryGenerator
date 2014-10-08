@@ -1,11 +1,11 @@
-package insert;
-
-import generic.Queries;
+package devinfalgoust.sqlquerygenerator.insert;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.RandomStringUtils;
+
+import devinfalgoust.sqlquerygenerator.Queries;
 
 /**
  * This is the class that generates the Insert Queries. a list of QueryFields,
@@ -16,7 +16,7 @@ import org.apache.commons.lang3.RandomStringUtils;
  * 
  * This class includes the org.apache.commons.lang3.RandomStringUtils.randomAlphabetic
  * function. You can either go download this and add it to your Build Path, or
- * write your own random string function.
+ * write your own random string generation function.
  * 
  * @author Devin Falgoust
  */

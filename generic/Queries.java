@@ -1,4 +1,4 @@
-package generic;
+package devinfalgoust.sqlquerygenerator;
 
 import java.util.List;
 import java.util.ArrayList;

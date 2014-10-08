@@ -1,5 +1,5 @@
-import insert.FieldType;
-import insert.InsertQueryGenerator;
+import devinfalgoust.sqlquerygenerator.insert.FieldType;
+import devinfalgoust.sqlquerygenerator.insert.InsertQueryGenerator;
 
 /**
  * This is the Driver class, containing the main function
