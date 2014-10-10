@@ -12,16 +12,21 @@ It also does not support Aliases or Joins of any kind.
 Instructions on how to use this are included in the Driver.java file
 
 Future plans include:
-- Finish Select Query Generator
-- Add Update Query Generator
-- Add Delete Query Generator
-- Add Database Management Query Generator
--- Create Database Functionality
--- Create Table Functionality
--- Drop Database Functionality
--- Drop Table Functionality
--- Alter Table Functionality
--- Truncate Table Functionality
+<ul>
+   <li>Finish Select Query Generator</li>
+   <li>Add Update Query Generator</li>
+   <li>Add Delete Query Generator</li>
+   <li>Add Database Management Query Generator
+      <ul>
+         <li>Create Database Functionality</li>
+         <li>Create Table Functionality</li>
+         <li>Drop Database Functionality</li>
+         <li>Drop Table Functionality</li>
+         <li>Alter Table Functionality</li>
+         <li>Truncate Table Functionality</li>
+      </ul>
+   </li>
+</ul>
 
 A class in this project (InsertQueryGenerator) includes the randomAlphabetic function from 
 org.apache.commons.lang3.RandomStringUtils
