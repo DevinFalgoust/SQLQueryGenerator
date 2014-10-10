@@ -1,4 +1,4 @@
-import devinfalgoust.sqlquerygenerator.insert.FieldType;
+import devinfalgoust.sqlquerygenerator.insert.InsertQueryFieldType;
 import devinfalgoust.sqlquerygenerator.insert.InsertQueryGenerator;
 
 /**
@@ -47,26 +47,26 @@ public class Driver {
 		 */
 
 		// First add the ID
-		generator.addField("ID", FieldType.ID);
+		generator.addField("ID", InsertQueryFieldType.ID);
 
 		// Then add first and last name
-		generator.addField("FIRST_NAME", FieldType.NAME);
-		generator.addField("LAST_NAME", FieldType.NAME);
+		generator.addField("FIRST_NAME", InsertQueryFieldType.NAME);
+		generator.addField("LAST_NAME", InsertQueryFieldType.NAME);
 
 		// Then add the email
-		generator.addField("EMAIL", FieldType.EMAIL);
+		generator.addField("EMAIL", InsertQueryFieldType.EMAIL);
 
 		// Then add a boolean variable
-		generator.addField("BOOLEAN", FieldType.TEXT, "true", "false");
+		generator.addField("BOOLEAN", InsertQueryFieldType.TEXT, "true", "false");
 
 		// Then add a date
-		generator.addField("DATE", FieldType.TEXT, "10032014");
+		generator.addField("DATE", InsertQueryFieldType.TEXT, "10032014");
 
 		// Then add a string with two options
-		generator.addField("SOURCE", FieldType.TEXT, "WEB", "STORE");
+		generator.addField("SOURCE", InsertQueryFieldType.TEXT, "WEB", "STORE");
 
 		// Then add a string with no options (randomly generates)
-		generator.addField("DATA", FieldType.TEXT);
+		generator.addField("DATA", InsertQueryFieldType.TEXT);
 
 		// Then print the list of queries
 		System.out.println(generator.generate());
