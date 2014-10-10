@@ -6,6 +6,6 @@ package devinfalgoust.sqlquerygenerator.insert;
  * 
  * @author Devin Falgoust
  */
-public enum FieldType {
+public enum InsertQueryFieldType {
 	ID, EMAIL, NAME, TEXT;
 }

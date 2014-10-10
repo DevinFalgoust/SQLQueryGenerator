@@ -108,7 +108,7 @@ public class InsertQueryGenerator {
 	 * @param type - type of field
 	 * @param options - options for choosing text
 	 */
-	public void addField(String name, FieldType type, String... options) {
+	public void addField(String name, InsertQueryFieldType type, String... options) {
 		InsertQueryField field = null;
 
 		if (options != null && options.length > 0) {

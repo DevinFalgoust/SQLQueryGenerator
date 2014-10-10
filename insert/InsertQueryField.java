@@ -13,7 +13,7 @@ import java.util.List;
 public class InsertQueryField {
 
 	private String name;
-	private FieldType type;
+	private InsertQueryFieldType type;
 	private List<String> options;
 
 	/**
@@ -23,7 +23,7 @@ public class InsertQueryField {
 	 * @param type - type of query
 	 * @param options - options to choose text from
 	 */
-	public InsertQueryField(String queryName, FieldType type, String... options) {
+	public InsertQueryField(String queryName, InsertQueryFieldType type, String... options) {
 		name = queryName;
 		this.type = type;
 		this.options = new ArrayList<String>();
@@ -38,7 +38,7 @@ public class InsertQueryField {
 	 * @return
 	 */
 	public Boolean isID() {
-		return type.equals(FieldType.ID);
+		return type.equals(InsertQueryFieldType.ID);
 	}
 
 	/**
@@ -47,7 +47,7 @@ public class InsertQueryField {
 	 * @return
 	 */
 	public Boolean isEmail() {
-		return type.equals(FieldType.EMAIL);
+		return type.equals(InsertQueryFieldType.EMAIL);
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class InsertQueryField {
 	 * @return
 	 */
 	public Boolean isName() {
-		return type.equals(FieldType.NAME);
+		return type.equals(InsertQueryFieldType.NAME);
 	}
 
 	/**
@@ -69,7 +69,7 @@ public class InsertQueryField {
 	 */
 	public Boolean isRandomText() {
 		Boolean random = options.size() == 1 && "".equals(getOption(0));
-		return type.equals(FieldType.TEXT) && random;
+		return type.equals(InsertQueryFieldType.TEXT) && random;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class InsertQueryField {
 	 */
 	public Boolean isTextFromChoices() {
 		Boolean random = options.size() == 1 && "".equals(getOption(0));
-		return type.equals(FieldType.TEXT) && !random;
+		return type.equals(InsertQueryFieldType.TEXT) && !random;
 	}
 
 	/**
