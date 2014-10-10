@@ -8,7 +8,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import devinfalgoust.sqlquerygenerator.Queries;
 
 /**
- * This is the class that generates the Insert Queries. a list of QueryFields,
+ * This is the class that generates the Insert Queries. a list of InsertQueryFields,
  * the tableName, and the start and end variables.
  * 
  * The start and end variables are used to calculate 1) the IDs of each
@@ -22,23 +22,26 @@ import devinfalgoust.sqlquerygenerator.Queries;
  */
 public class InsertQueryGenerator {
 
-	private List<QueryField> fields;
+	private List<InsertQueryField> fields;
 	private Integer start;
 	private Integer end;
 	private String tableName;
 
 	/**
-	 * Constructor to creat the InsertQueryGenerator
+	 * Constructor to create the InsertQueryGenerator
 	 * 
-	 * @param tableName - table that you wish to insert a record into
-	 * @param start - starting index
-	 * @param end - ending index
+	 * @param tableName
+	 *            - table that you wish to insert a record into
+	 * @param start
+	 *            - starting index
+	 * @param end
+	 *            - ending index
 	 */
 	public InsertQueryGenerator(String tableName, int start, int end) {
 		this.tableName = tableName;
 		this.start = start;
 		this.end = end;
-		fields = new ArrayList<QueryField>();
+		fields = new ArrayList<InsertQueryField>();
 	}
 
 	/**
@@ -52,21 +55,21 @@ public class InsertQueryGenerator {
 
 		for (Integer i = start; i <= end; i++) {
 			InsertQuery query = new InsertQuery(tableName);
-			for (QueryField field : fields) {
+			for (InsertQueryField field : fields) {
 				String value = "";
 
 				if (field.isID()) {
-					value += i.toString();
+					value = i.toString();
 				} else if (field.isEmail()) {
-					value += RandomStringUtils.randomAlphabetic(8) + i.toString() + "@test.com";
+					value = RandomStringUtils.randomAlphabetic(8) + i.toString() + "@test.com";
 				} else if (field.isName()) {
-					value += RandomStringUtils.randomAlphabetic(1).toUpperCase() + RandomStringUtils.randomAlphabetic(7).toLowerCase();
+					value = RandomStringUtils.randomAlphabetic(1).toUpperCase() + RandomStringUtils.randomAlphabetic(7).toLowerCase();
 				} else if (field.isRandomText()) {
-					value += RandomStringUtils.randomAlphabetic(8);
+					value = RandomStringUtils.randomAlphabetic(8);
 				} else if (field.isTextFromChoices()) {
 					Double rand = Math.random() * 1000;
 					Integer index = rand.intValue() % field.getOptions().size();
-					value += field.getOption(index);
+					value = field.getOption(index);
 				} else {
 					// Should never reach here
 				}
@@ -100,12 +103,12 @@ public class InsertQueryGenerator {
 	 * @param options - options for choosing text
 	 */
 	public void addField(String name, FieldType type, String... options) {
-		QueryField field = null;
+		InsertQueryField field = null;
 
 		if (options != null && options.length > 0) {
-			field = new QueryField(name, type, options);
+			field = new InsertQueryField(name, type, options);
 		} else {
-			field = new QueryField(name, type, new String[] { "" });
+			field = new InsertQueryField(name, type, new String[] { "" });
 		}
 
 		fields.add(field);

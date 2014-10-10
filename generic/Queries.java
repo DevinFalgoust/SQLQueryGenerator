@@ -28,11 +28,11 @@ public class Queries {
 	 * @return
 	 */
 	public String generateAll() {
-		String all = "";
+		StringBuilder all = new StringBuilder();
 		for (Query query : queries) {
-			all += query.generate() + "\n";
+			all.append(query.generate()).append("\n");
 		}
-		return all;
+		return all.toString();
 	}
 
 	/**

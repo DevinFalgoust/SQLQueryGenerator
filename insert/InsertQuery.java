@@ -9,7 +9,7 @@ import devinfalgoust.sqlquerygenerator.Query;
  * The InsertQuery class is used by the InsertQueryGenerator.
  * It implements the Query interface so that it can be stored
  * in a Queries object. It signifies a single Query in that list.
- * 
+ * -
  * It has a tableName, and a list of field names and values
  * 
  * @author Devin Falgoust
@@ -40,22 +40,24 @@ public class InsertQuery implements Query {
 	 * @return
 	 */
 	public String generate() {
-		String query = "INSERT INTO " + tableName + " (";
+		StringBuilder query = new StringBuilder();
+
+		query.append("INSERT INTO ").append(tableName).append(" (");
 		for (int i = 0; i < fieldNames.size(); i++) {
-			query += fieldNames.get(i);
+			query.append(fieldNames.get(i));
 			if (i < fieldNames.size() - 1) {
-				query += ", ";
+				query.append(", ");
 			}
 		}
-		query += ") VALUES (";
+		query.append(") VALUES (");
 		for (int i = 0; i < fieldValues.size(); i++) {
-			query += "'" + fieldValues.get(i) + "'";
+			query.append("'").append(fieldValues.get(i)).append("'");
 			if (i < fieldValues.size() - 1) {
-				query += ", ";
+				query.append(", ");
 			}
 		}
-		query += ");";
-		return query;
+		query.append(");");
+		return query.toString();
 	}
 
 	/**

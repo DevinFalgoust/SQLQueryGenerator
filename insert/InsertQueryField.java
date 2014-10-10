@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The QueryField Class houses the information for a given field
+ * The InsertQueryField Class houses the information for a given field
  * within a given query. Each field has a name, a type, and a list
  * of choices (that may sometimes be empty)
  * 
  * @author Devin Falgoust
  */
-public class QueryField {
+public class InsertQueryField {
 
 	private String name;
 	private FieldType type;
@@ -23,7 +23,7 @@ public class QueryField {
 	 * @param type - type of query
 	 * @param options - options to choose text from
 	 */
-	public QueryField(String queryName, FieldType type, String... options) {
+	public InsertQueryField(String queryName, FieldType type, String... options) {
 		name = queryName;
 		this.type = type;
 		this.options = new ArrayList<String>();
