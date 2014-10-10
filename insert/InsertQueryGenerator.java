@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import devinfalgoust.sqlquerygenerator.Queries;
+import devinfalgoust.sqlquerygenerator.QueryException;
 
 /**
  * This is the class that generates the Insert Queries. a list of InsertQueryFields,
@@ -79,7 +80,12 @@ public class InsertQueryGenerator {
 			queries.addQuery(query);
 		}
 
-		return queries.generateAll();
+		try {
+			return queries.generateAll();
+		} catch (QueryException e) {
+			// This should never be reached
+			return e.getMessage();
+		}
 	}
 
 	/**

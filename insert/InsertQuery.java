@@ -39,6 +39,7 @@ public class InsertQuery implements Query {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String generate() {
 		StringBuilder query = new StringBuilder();
 
