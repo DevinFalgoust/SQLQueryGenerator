@@ -2,8 +2,11 @@ SQLQueryGenerator
 ==========
 
 This is a simple program created to generate a large amount of test SQL Queries very quickly.
-It currently only has the Insert Query Generator implemented, but I can potentially create
-more Query Generators as the need arises.
+Currently only the Insert Query Generator is completely implemented.
+
+The Select Query Generator has its basic functionality built, but is not feature complete.
+It currently does not support the OR operator, the BETWEEN or IN operators, multiple values in
+a given where clause, and it currently does not provide type safety on any where operators.
 
 Instructions on how to use this are included in the Driver.java file
 
