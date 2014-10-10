@@ -14,8 +14,7 @@ public interface Query {
 	 * return it as a String so it may be printed.
 	 * 
 	 * @return
-	 * @throws QueryException
 	 */
-	public String generate() throws QueryException;
+	public String generate();
 
 }

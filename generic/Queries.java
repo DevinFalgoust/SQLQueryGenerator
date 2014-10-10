@@ -26,9 +26,8 @@ public class Queries {
 	 * by a newline.
 	 * 
 	 * @return
-	 * @throws QueryException
 	 */
-	public String generateAll() throws QueryException {
+	public String generateAll() {
 		StringBuilder all = new StringBuilder();
 		for (Query query : queries) {
 			all.append(query.generate()).append("\n");

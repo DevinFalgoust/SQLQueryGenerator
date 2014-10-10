@@ -80,12 +80,7 @@ public class InsertQueryGenerator {
 			queries.addQuery(query);
 		}
 
-		try {
-			return queries.generateAll();
-		} catch (QueryException e) {
-			// This should never be reached
-			return e.getMessage();
-		}
+		return queries.generateAll();
 	}
 
 	/**
