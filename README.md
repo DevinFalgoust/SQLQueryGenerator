@@ -7,8 +7,21 @@ Currently only the Insert Query Generator is completely implemented.
 The Select Query Generator has its basic functionality built, but is not feature complete.
 It currently does not support the OR operator, the BETWEEN or IN operators, multiple values in
 a given where clause, and it currently does not provide type safety on any where operators.
+It also does not support Aliases or Joins of any kind.
 
 Instructions on how to use this are included in the Driver.java file
+
+Future plans include:
+- Finish Select Query Generator
+- Add Update Query Generator
+- Add Delete Query Generator
+- Add Database Management Query Generator
+-- Create Database Functionality
+-- Create Table Functionality
+-- Drop Database Functionality
+-- Drop Table Functionality
+-- Alter Table Functionality
+-- Truncate Table Functionality
 
 A class in this project (InsertQueryGenerator) includes the randomAlphabetic function from 
 org.apache.commons.lang3.RandomStringUtils
